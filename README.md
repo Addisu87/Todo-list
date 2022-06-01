@@ -1,6 +1,6 @@
 # Project Name
 
-- Todo list app
+- To-Do list
 
   > Description the project.
 
@@ -20,17 +20,11 @@
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+### Install - npm
 
-### Setup
+### Usage - git clone git@github.com:Addisu87/webpack-demo.git
 
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
+### Run tests - npm run build then npm start
 
 ## Authors
 

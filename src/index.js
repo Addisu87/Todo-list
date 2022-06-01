@@ -68,7 +68,7 @@ const DisplayTodos = () => {
     });
 
     deleteButton.addEventListener('click', () => {
-      todos = todos.filter((t) => t !== todo);
+      todos = todos.filter((task) => task !== todo);
       localStorage.setItem('todos', JSON.stringify(todos));
       DisplayTodos();
     });
