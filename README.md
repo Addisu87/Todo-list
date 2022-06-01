@@ -1,10 +1,10 @@
 # Project Name
 
-- webpack-demo
+- To-Do list
 
   > Description the project.
 
-  - A demo work to show how webpack is working.
+  - A todo list application that includes adding a new list and deleting the unwanted list.
 
 ## Built With
 
@@ -20,17 +20,13 @@
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-### Setup
-
-### Install
+### Install - npm
 
 ### Usage
 
-### Run tests
+--git clone git@github.com:Addisu87/webpack-demo.git
 
-### Deployment
+### Run tests - npm run build then npm start
 
 ## Authors
 

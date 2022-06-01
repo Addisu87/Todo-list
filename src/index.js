@@ -1,21 +1,102 @@
-import _ from 'lodash';
 import './style.css';
-import printMe from './print.js';
 
-const component = () => {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+const DisplayTodos = () => {
+  let todos = JSON.parse(localStorage.getItem('todos')) || [];
+  const todoList = document.querySelector('#todo-list');
+  todoList.innerHTML = '';
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+  todos.forEach((todo) => {
+    const todoItem = document.createElement('div');
+    todoItem.classList.add('todo-item');
 
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
+    const label = document.createElement('label');
+    const input = document.createElement('input');
+    const span = document.createElement('span');
+    const content = document.createElement('div');
+    const actions = document.createElement('div');
+    const edit = document.createElement('button');
+    const deleteButton = document.createElement('button');
 
-  element.appendChild(btn);
+    input.type = 'checkbox';
+    input.checked = todo.done;
+    span.classList.add('bubble');
+    content.classList.add('todo-content');
+    actions.classList.add('actions');
+    edit.classList.add('edit');
+    deleteButton.classList.add('delete');
 
-  return element;
+    content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+    edit.innerHTML = 'Edit';
+    deleteButton.innerHTML = 'Delete';
+
+    label.appendChild(input);
+    label.appendChild(span);
+    actions.appendChild(edit);
+    actions.appendChild(deleteButton);
+    todoItem.appendChild(label);
+    todoItem.appendChild(content);
+    todoItem.appendChild(actions);
+
+    todoList.appendChild(todoItem);
+
+    if (todo.done) {
+      todoItem.classList.add('done');
+    }
+
+    input.addEventListener('change', (e) => {
+      todo.done = e.target.checked;
+      localStorage.setItem('todos', JSON.stringify(todos));
+
+      if (todo.done) {
+        todoItem.classList.add('done');
+      } else {
+        todoItem.classList.remove('done');
+      }
+      DisplayTodos();
+    });
+
+    edit.addEventListener('click', () => {
+      const input = content.querySelector('input');
+      input.removeAttribute('readonly');
+      input.focus();
+      input.addEventListener('blur', (e) => {
+        input.setAttribute('readonly', true);
+        todo.content = e.target.value;
+        localStorage.setItem('todos', JSON.stringify(todos));
+        DisplayTodos();
+      });
+    });
+
+    deleteButton.addEventListener('click', () => {
+      todos = todos.filter((task) => task !== todo);
+      localStorage.setItem('todos', JSON.stringify(todos));
+      DisplayTodos();
+    });
+  });
 };
 
-document.body.appendChild(component());
+window.addEventListener('load', () => {
+  const todos = JSON.parse(localStorage.getItem('todos')) || [];
+  const newTodoForm = document.querySelector('#new-todo-form');
+
+  newTodoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const todo = {
+      content: e.target.elements.content.value,
+      done: false,
+      createdAt: new Date().getTime(),
+    };
+
+    todos.push(todo);
+
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+    // Reset the form
+    e.target.reset();
+
+    DisplayTodos();
+  });
+
+  DisplayTodos();
+});
