@@ -1,33 +1,5 @@
-// import './style.css';
-
-window.addEventListener('load', () => {
-  todos = JSON.parse(localStorage.getItem('todos')) || [];
-
-  const newTodoForm = document.querySelector('#new-todo-form');
-
-  newTodoForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const todo = {
-      content: e.target.elements.content.value,
-      done: false,
-      createdAt: new Date().getTime()
-    };
-
-    todos.push(todo);
-
-    localStorage.setItem('todos', JSON.stringify(todos));
-
-    // Reset the form
-    e.target.reset();
-
-    DisplayTodos();
-  });
-
-  DisplayTodos();
-});
-
 const DisplayTodos = () => {
+  let todos = JSON.parse(localStorage.getItem('todos')) || [];
   const todoList = document.querySelector('#todo-list');
   todoList.innerHTML = '';
 
@@ -78,11 +50,10 @@ const DisplayTodos = () => {
       } else {
         todoItem.classList.remove('done');
       }
-
       DisplayTodos();
     });
 
-    edit.addEventListener('click', (e) => {
+    edit.addEventListener('click', () => {
       const input = content.querySelector('input');
       input.removeAttribute('readonly');
       input.focus();
@@ -94,10 +65,36 @@ const DisplayTodos = () => {
       });
     });
 
-    deleteButton.addEventListener('click', (e) => {
+    deleteButton.addEventListener('click', () => {
       todos = todos.filter((t) => t !== todo);
       localStorage.setItem('todos', JSON.stringify(todos));
       DisplayTodos();
     });
   });
 };
+
+window.addEventListener('load', () => {
+  const todos = JSON.parse(localStorage.getItem('todos')) || [];
+  const newTodoForm = document.querySelector('#new-todo-form');
+
+  newTodoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const todo = {
+      content: e.target.elements.content.value,
+      done: false,
+      createdAt: new Date().getTime()
+    };
+
+    todos.push(todo);
+
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+    // Reset the form
+    e.target.reset();
+
+    DisplayTodos();
+  });
+
+  DisplayTodos();
+});
