@@ -1,10 +1,10 @@
 # Project Name
 
-- webpack-demo
+- Todo list app
 
   > Description the project.
 
-  - A demo work to show how webpack is working.
+  - A todo list application that includes adding a new list and deleting the unwanted list.
 
 ## Built With
 
