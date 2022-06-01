@@ -1,3 +1,5 @@
+import './style.css';
+
 const DisplayTodos = () => {
   let todos = JSON.parse(localStorage.getItem('todos')) || [];
   const todoList = document.querySelector('#todo-list');

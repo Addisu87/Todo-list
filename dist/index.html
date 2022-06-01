@@ -2,10 +2,49 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Development</title>
+    <title>Todo List</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <script defer="defer" src="index.bundle.js"></script>
-    <script defer="defer" src="print.bundle.js"></script>
-  </head>
-  <body></body>
+
+    <link rel="stylesheet" href="./style.css" />
+  <script defer src="main.bundle.js"></script></head>
+  <body>
+    <!-- App Wrapper -->
+    <main class="app">
+      <section class="create-todo">
+        <form id="new-todo-form">
+          <h4>Today's To Do</h4>
+          <input
+            type="text"
+            placeholder="Add to your list..."
+            name="content"
+            id="content"
+          />
+
+          <div class="options">
+            <input
+              type="checkbox"
+              name="category"
+              value="personal"
+              id="category1"
+            />
+          </div>
+
+          <input type="submit" value="Add todo" />
+        </form>
+      </section>
+
+      <!-- End of New Todo -->
+
+      <!-- Todo List -->
+      <section class="todo-list">
+        <h3>TODO LIST</h3>
+        <div class="list" id="todo-list"></div>
+      </section>
+      <!-- End of Todo List -->
+    </main>
+    <!-- End of App Wrapper -->
+
+    <!-- JS Import -->
+    <script src="./index.js"></script>
+  </body>
 </html>
