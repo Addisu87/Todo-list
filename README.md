@@ -22,7 +22,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install - npm
 
-### Usage - git clone git@github.com:Addisu87/webpack-demo.git
+### Usage
+
+--git clone git@github.com:Addisu87/webpack-demo.git
 
 ### Run tests - npm run build then npm start
 
