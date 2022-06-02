@@ -12,7 +12,7 @@ const clearAllTasks = () => {
   clearTasks.appendChild(removeAll);
 
   removeAll.addEventListener('click', () => {
-    localStorage.clear();
+    localStorage.removeItem('todos');
     DisplayTodos();
   });
 };

@@ -24,12 +24,11 @@ window.addEventListener('load', () => {
     e.target.reset();
 
     // Validate
-    if (todo.length === 0) {
-      e.preventDefault();
+    if (todo.value === '') {
       showAlert('Please fill in the field', 'danger');
     } else {
-      DisplayTodos();
       showAlert('To-do list added', 'success');
+      DisplayTodos();
     }
   });
 
