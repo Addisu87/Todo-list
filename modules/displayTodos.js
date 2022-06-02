@@ -1,4 +1,4 @@
-import './style.css';
+import '../src/style.css';
 
 const DisplayTodos = () => {
   let todos = JSON.parse(localStorage.getItem('todos')) || [];
