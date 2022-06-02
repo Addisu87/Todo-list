@@ -2,6 +2,7 @@ import './style.css';
 
 const DisplayTodos = () => {
   let todos = JSON.parse(localStorage.getItem('todos')) || [];
+
   const todoList = document.querySelector('#todo-list');
   todoList.innerHTML = '';
 
@@ -10,23 +11,27 @@ const DisplayTodos = () => {
     todoItem.classList.add('todo-item');
 
     const label = document.createElement('label');
-    const input = document.createElement('input');
-    const span = document.createElement('span');
-    const content = document.createElement('div');
-    const actions = document.createElement('div');
-    const edit = document.createElement('button');
-    const deleteButton = document.createElement('button');
 
+    const input = document.createElement('input');
     input.type = 'checkbox';
     input.checked = todo.done;
-    span.classList.add('bubble');
-    content.classList.add('todo-content');
-    actions.classList.add('actions');
-    edit.classList.add('edit');
-    deleteButton.classList.add('delete');
 
+    const span = document.createElement('span');
+    span.classList.add('bubble');
+
+    const content = document.createElement('div');
+    content.classList.add('todo-content');
     content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+
+    const actions = document.createElement('div');
+    actions.classList.add('actions');
+
+    const edit = document.createElement('button');
+    edit.classList.add('edit');
     edit.innerHTML = 'Edit';
+
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete');
     deleteButton.innerHTML = 'Delete';
 
     label.appendChild(input);

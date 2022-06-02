@@ -1,14 +1,15 @@
 :root {
   --primary: #3d3d29;
-  --business: #3a82ee;
-  --personal: var(--primary);
+  --blue: #3a82ee;
   --light: #eee;
+  --white: #fff;
   --grey: #888;
   --dark: #313154;
   --danger: #f41e1b;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --business-glow: 0 0 4px rgba(58, 130, 238, 0.75);
-  --personal-glow: 0 0 4px rgba(234, 64, 164, 0.75);
+  --dark-blue: 0 0 4px rgba(58, 130, 238, 0.75);
+  --pink: #ec4899;
+  --purple: #8b5cf6;
 }
 
 /* End of Variables */
@@ -82,8 +83,8 @@ input[type='checkbox'] {
   width: 20px;
   height: 20px;
   border-radius: 999px;
-  border: 2px solid var(--business);
-  box-shadow: var(--business-glow);
+  border: 2px solid var(--blue);
+  box-shadow: var(--dark-blue);
 }
 
 .bubble::after {
@@ -92,8 +93,8 @@ input[type='checkbox'] {
   opacity: 0;
   width: 0;
   height: 0;
-  background-color: var(--business);
-  box-shadow: var(--business-glow);
+  background-color: var(--blue);
+  box-shadow: var(--dark-blue);
   border-radius: 999px;
   transition: 0.2s ease-in-out;
 }
@@ -109,17 +110,24 @@ input:checked ~ .bubble::after {
   width: 100%;
   font-size: 1.125rem;
   padding: 1rem 1.5rem;
-  color: #fff;
+  color: var(--pink);
+  background-image: linear-gradient(to right, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 700;
   text-transform: uppercase;
   background-color: var(--primary);
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: 0.2s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .create-todo input[type='submit']:hover {
-  opacity: 0.75;
+  opacity: 0.8;
+}
+
+.create-todo input[type='submit']:active {
+  opacity: 0.6;
 }
 
 .todo-list .list {
@@ -129,7 +137,7 @@ input:checked ~ .bubble::after {
 .todo-list .todo-item {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--white);
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
@@ -160,9 +168,9 @@ input:checked ~ .bubble::after {
   display: block;
   padding: 0.5rem;
   border-radius: 0.25rem;
-  color: #fff;
+  color: var(--white);
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .todo-item .actions button:hover {
@@ -171,11 +179,13 @@ input:checked ~ .bubble::after {
 
 .todo-item .actions .edit {
   margin-right: 0.5rem;
-  background-color: var(--primary);
+  background-image: linear-gradient(to right, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .todo-item .actions .delete {
-  background-color: var(--danger);
+  color: var(--danger);
 }
 
 .todo-item.done .todo-content input {
