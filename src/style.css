@@ -196,7 +196,7 @@ input:checked ~ .bubble::after {
   color: var(--danger);
 }
 
-#clear-tasks button {
+#completed button {
   display: block;
   width: 100%;
   font-size: 1.125rem;

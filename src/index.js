@@ -24,7 +24,7 @@ window.addEventListener('load', () => {
     e.target.reset();
 
     // Validate
-    if (todo.value === '') {
+    if (todo.content === '') {
       showAlert('Please fill in the field', 'danger');
     } else {
       showAlert('To-do list added', 'success');
