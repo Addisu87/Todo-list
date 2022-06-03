@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: '[name].bundle.js',
     clean: true
   },
@@ -23,6 +23,6 @@ module.exports = {
     })
   ],
   devServer: {
-    static: './dist'
+    static: './docs'
   }
 };
