@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   font-family: 'montserrat', sans-serif;
+  overflow: hidden;
 }
 
 input:not([type='radio']):not([type='checkbox']),
@@ -159,7 +160,7 @@ input:checked ~ .bubble::after {
 }
 
 .todo-item .todo-content {
-  flex: 1 1 10%;
+  flex: 1 1 0%;
 }
 
 .todo-item .todo-content input {
