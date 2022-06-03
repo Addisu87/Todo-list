@@ -1,5 +1,7 @@
 import './style.css';
-import DisplayTodos from './displayTodos.js';
+import DisplayTodos from '../modules/displayTodos.js';
+import clearAllTasks from '../modules/removeAll.js';
+import showAlert from '../modules/showAlert.js';
 
 window.addEventListener('load', () => {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -21,8 +23,15 @@ window.addEventListener('load', () => {
     // Reset the form
     e.target.reset();
 
-    DisplayTodos();
+    // Validate
+    if (todo.content === '') {
+      showAlert('Please fill in the field', 'danger');
+    } else {
+      showAlert('To-do list added', 'success');
+      DisplayTodos();
+    }
   });
 
   DisplayTodos();
+  clearAllTasks();
 });
