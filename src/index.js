@@ -13,23 +13,21 @@ window.addEventListener('load', () => {
     const todo = {
       content: e.target.elements.content.value,
       done: false,
-      createdAt: new Date().getTime(),
+      createdAt: new Date().getTime()
     };
-
-    todos.push(todo);
-
-    localStorage.setItem('todos', JSON.stringify(todos));
-
-    // Reset the form
-    e.target.reset();
 
     // Validate
     if (todo.content === '') {
       showAlert('Please fill in the field', 'danger');
     } else {
       showAlert('To-do list added', 'success');
+      todos.push(todo);
+      localStorage.setItem('todos', JSON.stringify(todos));
       DisplayTodos();
     }
+
+    // Reset the form
+    e.target.reset();
   });
 
   DisplayTodos();
