@@ -154,12 +154,12 @@ input:checked ~ .bubble::after {
 
 .todo-item label {
   display: block;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   cursor: pointer;
 }
 
 .todo-item .todo-content {
-  flex: 1 1 0%;
+  flex: 1 1 10%;
 }
 
 .todo-item .todo-content input {

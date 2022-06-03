@@ -4,7 +4,9 @@ import clearAllTasks from '../modules/removeAll.js';
 import showAlert from '../modules/showAlert.js';
 
 window.addEventListener('load', () => {
-  const todos = JSON.parse(localStorage.getItem('todos')) || [];
+  const todos = (JSON.parse(localStorage.getItem('todos')) || []).filter(
+    (todo) => todo.content !== '',
+  );
   const newTodoForm = document.querySelector('#new-todo-form');
 
   newTodoForm.addEventListener('submit', (e) => {
@@ -13,7 +15,7 @@ window.addEventListener('load', () => {
     const todo = {
       content: e.target.elements.content.value,
       done: false,
-      createdAt: new Date().getTime()
+      createdAt: new Date().getTime(),
     };
 
     // Validate
