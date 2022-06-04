@@ -1,16 +1,12 @@
-# Project Name
+# To-Do list Application
 
-- To-Do list
-
-  > Description the project.
-
-  - A todo list application that includes adding a new list and deleting the unwanted list.
+> A todo list application that includes adding a new list, deleting the unwanted list, clear the completed tasks and store it in local storage.
 
 ## Built With
 
-- HTML
-- JavaScript
-- CSS
+- HTML 5
+- CSS 3
+- JavaScript Vanilla
 
 ## Live Demo (if available)
 
@@ -18,33 +14,40 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+- To get a local copy up and running follow these simple example step.
 
-### Install - npm
+### Prerequisites
 
-### Usage
+- ECMA Script compatible web browsers
 
--- git clone git@github.com:Addisu87/To-do-list.git
+### Setup
 
-### Run tests - npm run build then npm start
+- Clone the repository using (git@github.com:Addisu87/To-do-list.git)
+
+### Install
+
+- Any HTML text editor, etc. VS Code, Brackets, Atom
+- npm install
+- npm run build
+- npm run start
 
 ## Authors
 
 👤 **Addisu Haile**
 
-- GitHub: Addisu87
-- Twitter: @AddisuTedla
-- LinkeIn: Addisu Tedla
+- GitHub: [Addisu87](https://github.com/Addisu87)
+- Twitter: [@AddisuTedla](https://twitter.com/AddisuTedla)
+- LinkeIn: [Addisu Tedla](https://www.linkedin.com/in/addisu-tedla-8b4a10143/)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+- Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Addisu87/To-do-list/issues).
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+- Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
@@ -54,4 +57,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+- This project is [MIT](./MIT.md) licensed.
