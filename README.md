@@ -1,6 +1,7 @@
-# To-Do list Application
 
-> A todo list application that includes adding a new list, deleting the unwanted list, clear the completed tasks and store it in local storage.
+# To-Do list
+
+> A todo list application that includes adding a new list and deleting the unwanted list.
 
 ## Built With
 
@@ -20,16 +21,17 @@
 
 - ECMA Script compatible web browsers
 
-### Setup
 
-- Clone the repository using (git@github.com:Addisu87/To-do-list.git)
+- First clone the repository using the following command: git clone git@github.com:Addisu87/To-do-list.git
 
 ### Install
 
-- Any HTML text editor, etc. VS Code, Brackets, Atom
-- npm install
+- npm package
+
+### Usage
+
 - npm run build
-- npm run start
+- npm start
 
 ## Authors
 
