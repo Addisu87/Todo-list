@@ -1,10 +1,6 @@
-# Project Name
+# To-Do list
 
-- To-Do list
-
-  > Description the project.
-
-  - A todo list application that includes adding a new list and deleting the unwanted list.
+> A todo list application that includes adding a new list and deleting the unwanted list.
 
 ## Built With
 
@@ -14,19 +10,22 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://addisu87.github.io/webpack-demo/)
+[Live Demo Link](https://addisu87.github.io/To-do-list/)
 
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-### Install - npm
+- First clone the repository using the following command: git clone git@github.com:Addisu87/To-do-list.git
+
+### Install
+
+- npm package
 
 ### Usage
 
--- git clone git@github.com:Addisu87/webpack-demo.git
-
-### Run tests - npm run build then npm start
+- npm run build
+- npm start
 
 ## Authors
 
@@ -40,7 +39,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Addisu87/To-do-list/issues).
 
 ## Show your support
 

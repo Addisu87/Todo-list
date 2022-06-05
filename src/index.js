@@ -4,7 +4,9 @@ import clearAllTasks from '../modules/removeAll.js';
 import showAlert from '../modules/showAlert.js';
 
 window.addEventListener('load', () => {
-  const todos = JSON.parse(localStorage.getItem('todos')) || [];
+  const todos = (JSON.parse(localStorage.getItem('todos')) || []).filter(
+    (todo) => todo.content !== '',
+  );
   const newTodoForm = document.querySelector('#new-todo-form');
 
   newTodoForm.addEventListener('submit', (e) => {
@@ -16,20 +18,18 @@ window.addEventListener('load', () => {
       createdAt: new Date().getTime(),
     };
 
-    todos.push(todo);
-
-    localStorage.setItem('todos', JSON.stringify(todos));
-
-    // Reset the form
-    e.target.reset();
-
     // Validate
     if (todo.content === '') {
       showAlert('Please fill in the field', 'danger');
     } else {
       showAlert('To-do list added', 'success');
+      todos.push(todo);
+      localStorage.setItem('todos', JSON.stringify(todos));
       DisplayTodos();
     }
+
+    // Reset the form
+    e.target.reset();
   });
 
   DisplayTodos();
