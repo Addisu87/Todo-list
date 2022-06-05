@@ -1,12 +1,13 @@
+
 # To-Do list
 
 > A todo list application that includes adding a new list and deleting the unwanted list.
 
 ## Built With
 
-- HTML
-- JavaScript
-- CSS
+- HTML 5
+- CSS 3
+- JavaScript Vanilla
 
 ## Live Demo (if available)
 
@@ -14,7 +15,12 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+- To get a local copy up and running follow these simple example step.
+
+### Prerequisites
+
+- ECMA Script compatible web browsers
+
 
 - First clone the repository using the following command: git clone git@github.com:Addisu87/To-do-list.git
 
@@ -31,19 +37,19 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Addisu Haile**
 
-- GitHub: Addisu87
-- Twitter: @AddisuTedla
-- LinkeIn: Addisu Tedla
+- GitHub: [Addisu87](https://github.com/Addisu87)
+- Twitter: [@AddisuTedla](https://twitter.com/AddisuTedla)
+- LinkeIn: [Addisu Tedla](https://www.linkedin.com/in/addisu-tedla-8b4a10143/)
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+- Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/Addisu87/To-do-list/issues).
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+- Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
@@ -53,4 +59,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+- This project is [MIT](./MIT.md) licensed.
