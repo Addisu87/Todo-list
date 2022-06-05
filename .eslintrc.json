@@ -22,5 +22,5 @@
       }
     ]
   },
-  "ignorePatterns": ["build/", "webpack.config.js", "main.js"]
+  "ignorePatterns": ["dist/", "build/", "webpack.config.js", "main.js"]
 }
