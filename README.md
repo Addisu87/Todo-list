@@ -11,7 +11,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://addisu87.github.io/To-do-list/)
+[Live Demo Link](https://addisu87.github.io/To-do-list/dist/)
 
 ## Getting Started
 
