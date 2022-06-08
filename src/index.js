@@ -1,7 +1,7 @@
 import './style.css';
 import DisplayTodos from '../modules/displayTodos.js';
 import clearAllTasks from '../modules/removeAll.js';
-import addItem from '../modules/addItem.js';
+import { addItem } from '../modules/addEditRemove.js';
 
 window.addEventListener('load', () => {
   const newTodoForm = document.querySelector('#new-todo-form');
