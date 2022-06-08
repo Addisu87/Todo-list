@@ -1,5 +1,6 @@
 import '../src/style.css';
 import showAlert from './showAlert.js';
+import DisplayTodos from './displayTodos.js';
 
 const addItem = (content) => {
   const todos = (JSON.parse(localStorage.getItem('todos')) || []).filter(
@@ -19,30 +20,17 @@ const addItem = (content) => {
     showAlert('To-do list added', 'success');
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
+    DisplayTodos();
   }
 };
 
-const editItem = (i) => {
+const editItem = (i, e) => {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  const todo = todos.filter((_, index) => index === i);
-
-  const input = document.getElementById(`${i}input`);
-
-  input.removeAttribute('readonly');
-  input.focus();
-  input.addEventListener('blur', (e) => {
-    todo.content = e.target.attributes.getNamedItem('id').value;
-    input.setAttribute('readonly', true);
-
-    const newTodos = todos.map((task, index) => {
-      if (index === i) {
-        return todo;
-      }
-      return task;
-    });
-
-    localStorage.setItem('todos', JSON.stringify(newTodos));
-  });
+  const task = todos.find((index) => index === i);
+  const newDescription = e.target.value;
+  task.content = newDescription;
+  todos[i] = task;
+  localStorage.setItem('todos', JSON.stringify(todos));
 };
 
 const deleteItem = (i) => {
