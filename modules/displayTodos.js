@@ -1,14 +1,16 @@
 import '../src/style.css';
+import deleteItem from './deleteItem.js';
+import editItem from './editItem.js';
 
 const DisplayTodos = () => {
-  let todos = JSON.parse(localStorage.getItem('todos')) || [];
+  const todos = JSON.parse(localStorage.getItem('todos')) || [];
 
   const todoList = document.querySelector('#todo-list');
   todoList.innerHTML = '';
 
   todos
     .sort((a, b) => a.index - b.index)
-    .forEach((todo) => {
+    .forEach((todo, i) => {
       const todoItem = document.createElement('div');
       todoItem.classList.add('todo-item');
 
@@ -25,7 +27,7 @@ const DisplayTodos = () => {
 
       const content = document.createElement('div');
       content.classList.add('todo-content');
-      content.innerHTML = `<input type="text" value="${todo.content}" readonly>`;
+      content.innerHTML = `<input type="text" id="${i}input" value="${todo.content}" readonly>`;
 
       const actions = document.createElement('div');
       actions.classList.add('actions');
@@ -63,22 +65,15 @@ const DisplayTodos = () => {
       });
 
       edit.addEventListener('click', () => {
-        const input = content.querySelector('input');
-        input.removeAttribute('readonly');
-        input.focus();
-        input.addEventListener('blur', (e) => {
-          input.setAttribute('readonly', true);
-          todo.content = e.target.value;
-          localStorage.setItem('todos', JSON.stringify(todos));
-          DisplayTodos();
-        });
+        editItem(i);
+        DisplayTodos();
       });
 
       deleteButton.addEventListener('click', () => {
-        todos = todos.filter((task) => task !== todo);
-        localStorage.setItem('todos', JSON.stringify(todos));
+        deleteItem(i);
         DisplayTodos();
       });
+      DisplayTodos();
     });
 };
 
