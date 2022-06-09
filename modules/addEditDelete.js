@@ -4,7 +4,7 @@ const addItem = (content, todos) => {
   const todo = {
     content,
     done: false,
-    createdAt: new Date().getTime()
+    createdAt: new Date().getTime(),
   };
 
   newTodos.push(todo);
