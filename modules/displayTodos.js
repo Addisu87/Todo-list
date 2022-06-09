@@ -1,5 +1,4 @@
-import '../src/style.css';
-import { editItem, deleteItem } from './addEditRemove.js';
+import { editItem, deleteItem } from './addEditDelete.js';
 
 const displayTodos = () => {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -74,7 +73,8 @@ const displayTodos = () => {
       });
 
       deleteButton.addEventListener('click', () => {
-        deleteItem(i);
+        const newTodos = deleteItem(i, todos);
+        localStorage.setItem('todos', JSON.stringify(newTodos));
         displayTodos();
       });
     });
