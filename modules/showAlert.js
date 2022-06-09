@@ -1,5 +1,3 @@
-import '../src/style.css';
-
 const showAlert = (message, className) => {
   const div = document.createElement('div');
   div.className = `alert alert-${className}`;

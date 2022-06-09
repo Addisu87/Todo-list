@@ -1,5 +1,5 @@
 import '../src/style.css';
-import DisplayTodos from './displayTodos.js';
+import displayTodos from './displayTodos.js';
 
 const clearAllTasks = () => {
   const clearTasks = document.querySelector('#completed');
@@ -16,7 +16,7 @@ const clearAllTasks = () => {
     const notRemoved = todos.filter((todo) => !todo.done);
     localStorage.clear('todos');
     localStorage.setItem('todos', JSON.stringify(notRemoved));
-    DisplayTodos();
+    displayTodos();
   });
 };
 
