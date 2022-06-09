@@ -1,4 +1,4 @@
-import { saveToStorage } from './storage.js';
+import saveToStorage from './storage.js';
 
 class LocalStorageMock {
   constructor() {
@@ -27,7 +27,7 @@ global.localStorage = new LocalStorageMock();
 describe('storage', () => {
   beforeAll(() => {
     Object.defineProperty(window, 'localStorage', {
-      value: LocalStorageMock
+      value: LocalStorageMock,
     });
   });
 

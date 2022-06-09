@@ -11,8 +11,8 @@ const compiler = webpack(config);
 // configuration file as a base.
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath
-  })
+    publicPath: config.output.publicPath,
+  }),
 );
 
 // Serve the files on port 3000.
