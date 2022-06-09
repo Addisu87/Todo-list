@@ -1,6 +1,6 @@
 import '../src/style.css';
 import showAlert from './showAlert.js';
-import DisplayTodos from './displayTodos.js';
+import displayTodos from './displayTodos.js';
 
 const addItem = (content) => {
   const todos = (JSON.parse(localStorage.getItem('todos')) || []).filter(
@@ -20,15 +20,15 @@ const addItem = (content) => {
     showAlert('To-do list added', 'success');
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
-    DisplayTodos();
+    displayTodos();
   }
 };
 
 const editItem = (i, e) => {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
   const task = todos.find((index) => index === i);
-  const newDescription = e.target.value;
-  task.content = newDescription;
+  const newContent = e.target.value;
+  task.content = newContent;
   todos[i] = task;
   localStorage.setItem('todos', JSON.stringify(todos));
 };

@@ -1,10 +1,10 @@
 import './style.css';
-import DisplayTodos from '../modules/displayTodos.js';
+import displayTodos from '../modules/displayTodos.js';
 import clearAllTasks from '../modules/removeAll.js';
 import { addItem } from '../modules/addEditRemove.js';
 
 window.addEventListener('load', () => {
-  DisplayTodos();
+  displayTodos();
   clearAllTasks();
 });
 

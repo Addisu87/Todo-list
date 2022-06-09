@@ -1,7 +1,7 @@
 import '../src/style.css';
 import { editItem, deleteItem } from './addEditRemove.js';
 
-const DisplayTodos = () => {
+const displayTodos = () => {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
   const todoList = document.querySelector('#todo-list');
   todoList.innerHTML = '';
@@ -59,7 +59,7 @@ const DisplayTodos = () => {
         } else {
           todoItem.classList.remove('done');
         }
-        DisplayTodos();
+        displayTodos();
       });
 
       edit.addEventListener('click', () => {
@@ -69,15 +69,15 @@ const DisplayTodos = () => {
         input.addEventListener('blur', (e) => {
           input.setAttribute('readonly', true);
           editItem(i, e);
-          DisplayTodos();
+          displayTodos();
         });
       });
 
       deleteButton.addEventListener('click', () => {
         deleteItem(i);
-        DisplayTodos();
+        displayTodos();
       });
     });
 };
 
-export default DisplayTodos;
+export default displayTodos;
