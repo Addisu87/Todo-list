@@ -1,4 +1,4 @@
-import saveToStorage from './storage.js';
+import saveToStorage from '../__mocks__/storage.js';
 
 class LocalStorageMock {
   constructor() {
