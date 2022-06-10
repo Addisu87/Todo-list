@@ -1,4 +1,4 @@
-import { editItem, deleteItem } from './addEditDelete.js';
+import { editItem, deleteItem, updateTaskStatus } from './addEditDelete.js';
 
 const displayTodos = () => {
   const todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -24,7 +24,7 @@ const displayTodos = () => {
 
       const content = document.createElement('div');
       content.classList.add('todo-content');
-      content.innerHTML = `<input type="text" id="${i}input" value="${todo.content}" readonly>`;
+      content.innerHTML = `<input type="text" id="${i}input" value="${todo.content}" readonly />`;
 
       const actions = document.createElement('div');
       actions.classList.add('actions');
@@ -51,8 +51,8 @@ const displayTodos = () => {
 
       checkBox.addEventListener('change', (e) => {
         todo.done = e.target.checked;
-        localStorage.setItem('todos', JSON.stringify(todos));
-
+        const newTodos = updateTaskStatus(todos, i, e.target.checked);
+        localStorage.setItem('todos', JSON.stringify(newTodos));
         if (todo.done) {
           todoItem.classList.add('done');
         } else {
@@ -65,10 +65,16 @@ const displayTodos = () => {
         const input = document.getElementById(`${i}input`);
         input.removeAttribute('readonly');
         input.focus();
-        input.addEventListener('blur', (e) => {
+
+        input.addEventListener('blur', () => {
           input.setAttribute('readonly', true);
-          editItem(i, e);
+          const newTodos = editItem(todos, i, input.value);
+          localStorage.setItem('todos', JSON.stringify(newTodos));
           displayTodos();
+        });
+
+        input.addEventListener('change', (e) => {
+          input.value = e.target.value;
         });
       });
 

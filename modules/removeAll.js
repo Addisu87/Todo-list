@@ -1,5 +1,5 @@
-import '../src/style.css';
 import displayTodos from './displayTodos.js';
+import { removeAllDone } from './addEditDelete.js';
 
 const clearAllTasks = () => {
   const clearTasks = document.querySelector('#completed');
@@ -13,8 +13,7 @@ const clearAllTasks = () => {
 
   removeAll.addEventListener('click', () => {
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
-    const notRemoved = todos.filter((todo) => !todo.done);
-    localStorage.clear('todos');
+    const notRemoved = removeAllDone(todos);
     localStorage.setItem('todos', JSON.stringify(notRemoved));
     displayTodos();
   });
