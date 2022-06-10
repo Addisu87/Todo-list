@@ -12,15 +12,26 @@ const addItem = (content, todos) => {
   return newTodos;
 };
 
-const editItem = (i, e) => {
-  const todos = JSON.parse(localStorage.getItem('todos')) || [];
-  const task = todos.find((index) => index === i);
-  const newContent = e.target.value;
-  task.content = newContent;
-  todos[i] = task;
-  localStorage.setItem('todos', JSON.stringify(todos));
+const editItem = (todos, itemIndex, content) => {
+  const newTodos = todos;
+  const task = newTodos.find((_, index) => index === itemIndex);
+  task.content = content;
+  newTodos[itemIndex] = task;
+  return newTodos;
+};
+
+const updateTaskStatus = (todos, itemIndex, status) => {
+  const newTodos = todos;
+  const task = newTodos.find((_, index) => index === itemIndex);
+  task.done = status;
+  newTodos[itemIndex] = task;
+  return newTodos;
 };
 
 const deleteItem = (i, todos) => todos.filter((_, index) => index !== i);
 
-export { addItem, editItem, deleteItem };
+const removeAllDone = (todos) => todos.filter((todo) => !todo.done);
+
+export {
+  addItem, editItem, deleteItem, removeAllDone, updateTaskStatus,
+};

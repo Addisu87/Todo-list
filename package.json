@@ -5,7 +5,7 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "jest addEditDelete.test.js",
+    "test": "jest addEditDelete.test.js --coverage",
     "watch": "jest --watch *.js",
     "build": "webpack",
     "start": "webpack serve --open",

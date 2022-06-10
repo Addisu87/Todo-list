@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1654876856354" clover="3.2.0">
+  <project timestamp="1654876856354" name="All files">
+    <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10" elements="29" coveredelements="29" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
+    <file name="addEditDelete.js" path="/Users/addisutedla/Documents/Projects/To-do-list/modules/addEditDelete.js">
+      <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="9" type="stmt"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="31" count="11" type="stmt"/>
+      <line num="33" count="4" type="stmt"/>
+    </file>
+  </project>
+</coverage>
