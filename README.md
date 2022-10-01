@@ -1,4 +1,3 @@
-
 # To-Do list
 
 > A todo list application that includes adding a new list and deleting the unwanted list.
